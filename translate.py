@@ -342,7 +342,7 @@ def sync_live(banners: list[tuple[str, str]]) -> None:
 
 
 def generate_index_html() -> None:
-    images = sorted(f.name for f in LIVE_DIR.iterdir() if f.suffix == ".jpg")
+    images = sorted((f.name for f in LIVE_DIR.iterdir() if f.suffix == ".jpg"), reverse=True)
 
     links_path = LIVE_DIR / "links.json"
     links: dict[str, str] = {}
